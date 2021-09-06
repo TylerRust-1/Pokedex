@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var _this = this;
 var container = document.getElementById("app");
-var pokemons = 100;
+var pokemons = 898;
 var fetchData = function () {
     for (var i = 1; i <= pokemons; i++) {
         getPokemon(i);
