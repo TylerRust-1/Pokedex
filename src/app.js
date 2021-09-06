@@ -61,7 +61,9 @@ var getPokemon = function (id) { return __awaiter(_this, void 0, void 0, functio
                     image: "" + pokemon.sprites.front_default,
                     type: pokemonType
                 };
-                showPokemon(transformedPokemon);
+                return [4 /*yield*/, showPokemon(transformedPokemon)];
+            case 3:
+                _a.sent();
                 return [2 /*return*/];
         }
     });
