@@ -6,6 +6,7 @@ interface IPokemon {
   name: string;
   image: string;
   type: string;
+  //URL: string;
 }
 
 const fetchData = (): void => {
@@ -25,7 +26,8 @@ const getPokemon = async (id: number): Promise<void> => {
     id: pokemon.id,
     name: pokemon.name,
     image: `${pokemon.sprites.front_default}`,
-    type: pokemonType
+    type: pokemonType,
+    //url: `https://en.wikipedia.org/wiki/${name}`
   };
 
     showPokemon(transformedPokemon);
@@ -34,10 +36,12 @@ const getPokemon = async (id: number): Promise<void> => {
 const showPokemon = (pokemon: IPokemon): void => {
   let output: string = `
         <div class="card">
+            <span class="link"><a href="https://en.wikipedia.org/wiki/${pokemon.name}">
             <span class="card--id">#${pokemon.id}</span>
             <img class="card--image" src=${pokemon.image} alt=${pokemon.name} />
             <h1 class="card--name">${pokemon.name}</h1>
             <span class="card--details">${pokemon.type}</span>
+            </a>
         </div>
     `;
   container.innerHTML += output;
