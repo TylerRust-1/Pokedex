@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
 
+a { color:white } /* Globally */
+
+/* Each state */
+
+a:visited { text-decoration: none; color:none; }
+a:hover { text-decoration: none; color:none; }
+a:focus { text-decoration: none; color:none; }
+a:hover, a:active { text-decoration: none; color:red }
+
 * {
     margin: 0;
     padding: 0;
