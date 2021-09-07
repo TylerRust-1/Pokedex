@@ -9,6 +9,8 @@ a:hover { text-decoration: none; color:none; }
 a:focus { text-decoration: none; color:none; }
 a:hover, a:active { text-decoration: none; color:red }
 
+h2 {text-align: center;}
+
 * {
     margin: 0;
     padding: 0;
