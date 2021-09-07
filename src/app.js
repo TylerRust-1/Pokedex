@@ -52,16 +52,20 @@ var getPokemon = function (id) { return __awaiter(_this, void 0, void 0, functio
                 return [4 /*yield*/, data.json()];
             case 2:
                 pokemon = _a.sent();
-                pokemonType = pokemon.types
-                    .map(function (poke) { return poke.type.name; })
-                    .join(", ");
+                return [4 /*yield*/, pokemon.types
+                        .map(function (poke) { return poke.type.name; })
+                        .join(", ")];
+            case 3:
+                pokemonType = _a.sent();
                 transformedPokemon = {
                     id: pokemon.id,
                     name: pokemon.name,
                     image: "" + pokemon.sprites.front_default,
                     type: pokemonType
                 };
-                showPokemon(transformedPokemon);
+                return [4 /*yield*/, showPokemon(transformedPokemon)];
+            case 4:
+                _a.sent();
                 return [2 /*return*/];
         }
     });
