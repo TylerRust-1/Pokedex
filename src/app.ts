@@ -1,5 +1,5 @@
 const container: HTMLElement | any = document.getElementById("app");
-const pokemons: number = 898;
+const pokemons: number = 151;
 
 interface IPokemon {
   id: number;
@@ -17,18 +17,18 @@ const fetchData = (): void => {
 const getPokemon = async (id: number): Promise<void> => {
   const data: Response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
   const pokemon: any = await data.json();
-  const pokemonType: string = await pokemon.types
+  const pokemonType: string = pokemon.types
     .map((poke: any) => poke.type.name)
     .join(", ");
 
-  const transformedPokemon = await {
+  const transformedPokemon = {
     id: pokemon.id,
     name: pokemon.name,
     image: `${pokemon.sprites.front_default}`,
     type: pokemonType
   };
 
-  await showPokemon(transformedPokemon);
+    showPokemon(transformedPokemon);
 };
 
 const showPokemon = (pokemon: IPokemon): void => {
